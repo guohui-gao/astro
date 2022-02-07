@@ -22,6 +22,7 @@ import pandas as pd
 from airflow.hooks.base import BaseHook
 from airflow.models import BaseOperator
 from smart_open import open
+from typing import Iterable
 
 from astro.sql.table import Table, TempTable, create_table_name
 from astro.utils.cloud_storage_creds import gcs_client, s3fs_creds
@@ -42,7 +43,9 @@ class AgnosticLoadFile(BaseOperator):
     :param output_conn_id: Database connection id.
     :type output_conn_id: str
     """
-
+    template_fields: Iterable[str] = (
+        "path"
+    )
     def __init__(
         self,
         path,
