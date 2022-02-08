@@ -45,8 +45,9 @@ class AgnosticLoadFile(BaseOperator):
     """
     template_fields: Iterable[str] = (
         'path',
+        'output_table',
     )
-    
+
     def __init__(
         self,
         path,
