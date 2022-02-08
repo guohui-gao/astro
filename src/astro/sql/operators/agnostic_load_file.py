@@ -44,9 +44,9 @@ class AgnosticLoadFile(BaseOperator):
     :type output_conn_id: str
     """
     template_fields: Iterable[str] = (
-        'task_id',
-        'path',
         'output_table',
+        'path',
+        'task_id',
     )
 
     def __init__(
