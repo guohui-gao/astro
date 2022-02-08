@@ -44,7 +44,7 @@ class AgnosticLoadFile(BaseOperator):
     :type output_conn_id: str
     """
     template_fields: Iterable[str] = (
-        "path"
+        "path",
     )
     def __init__(
         self,
