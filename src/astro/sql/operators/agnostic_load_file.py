@@ -45,7 +45,6 @@ class AgnosticLoadFile(BaseOperator):
     """
     template_fields: Iterable[str] = (
         'output_table',
-        'output_table.table_name',
         'path',
         'task_id',
     )
